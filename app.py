@@ -16,7 +16,7 @@ classes = [
 ]
 
 # モデル読み込み
-model = models.resnet18()
+model = models.resnet18(pretrained=False)
 model.fc = torch.nn.Linear(model.fc.in_features, len(classes))
 model.load_state_dict(torch.load(model_path, map_location="cpu"))
 model.eval()
